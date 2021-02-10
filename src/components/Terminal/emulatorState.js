@@ -1,6 +1,7 @@
 import * as Terminal from 'javascript-terminal'
 import { OutputFactory } from 'react-terminal-component'
 
+import { links } from './links'
 const customFileSystem = Terminal.FileSystem.create({
   '/about': {},
   '/about/skills': { content: 'This is a skills', canModify: false },
@@ -66,7 +67,8 @@ const customCommandMapping = Terminal.CommandMapping.create({
             'ls: list content',
             'cat: print content',
             'cd <folder>: change directory',
-            'goto'
+            'cd ..: go back to parent directory',
+            'goto: open in new tab'
           ].join('\n')
         )
       }
@@ -84,10 +86,8 @@ const customCommandMapping = Terminal.CommandMapping.create({
       }
 
       let tab = ''
-      if (opts[0] === 'github') {
-        tab = 'https://github.com/r1oga'
-      } else if (opts[0] === 'twitter') {
-        tab = 'https://twitter.com/r1oga'
+      if (opts[0] in links) {
+        tab = links[opts[0]]
       } else if (!opts[0].startsWith('http')) {
         return {
           output: Terminal.OutputFactory.makeTextOutput(

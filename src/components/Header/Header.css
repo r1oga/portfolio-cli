@@ -13,4 +13,5 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  margin-bottom: 1em;
 }

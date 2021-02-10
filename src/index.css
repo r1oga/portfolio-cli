@@ -6,3 +6,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+div {
+  margin-bottom: 0.5em;
+}
