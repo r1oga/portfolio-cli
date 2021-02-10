@@ -1,0 +1,16 @@
+.roles span {
+  font-family: monospace;
+  color: #fff;
+  font-size: 1.2em;
+  margin: 0 1em;
+}
+
+.roles span:hover {
+  background-color: #f23f52;
+}
+
+.roles {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}

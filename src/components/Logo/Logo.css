@@ -1,0 +1,47 @@
+.r1oga {
+  margin-top: 10px !important;
+  height: 15vh;
+  display: block;
+  margin: auto;
+}
+
+.cls-1 {
+  fill: none;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1500;
+  animation: lines 4s infinite calc(var(--item) * 1s);
+}
+
+.dot {
+  stroke-dasharray: 500;
+  stroke: var(--color);
+}
+
+#path1 {
+  --item: 1;
+  --color: rgb(242, 63, 82);
+}
+
+#path2 {
+  --item: 2;
+  --color: rgb(0, 167, 225);
+}
+
+#path3 {
+  --item: 3;
+  --color: rgb(255, 255, 255);
+}
+
+.stem {
+  stroke: var(--color);
+}
+
+@keyframes lines {
+  100% {
+    stroke-dashoffset: 3000;
+  }
+}
