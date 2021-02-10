@@ -5,7 +5,6 @@ import { Header, Terminal } from './components'
 const App = () => {
   return (
     <>
-      <br />
       <Header />
       <Terminal />
     </>
