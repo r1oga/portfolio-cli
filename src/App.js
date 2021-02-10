@@ -11,6 +11,7 @@ const App = () => {
       <br />
       <Header />
       <ReactTerminal
+        promptSymbol="🐒"
         emulatorState={emulatorState}
         theme={{
           ...ReactThemes.dye,
