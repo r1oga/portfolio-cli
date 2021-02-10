@@ -9,5 +9,6 @@ export const links = {
     'https://github.com/r1oga/decentralized_house_listing',
   'flight-surety': 'https://github.com/r1oga/flight-surety',
   'ipfs-upload-dapp': 'https://github.com/r1oga/ipfs-upload-dapp',
-  kickstartereum: 'https://kickstartereum.herokuapp.com/'
+  kickstartereum: 'https://kickstartereum.herokuapp.com/',
+  blog: 'https://listed.to/@r1oga'
 }

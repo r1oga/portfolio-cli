@@ -4,9 +4,55 @@ import { OutputFactory } from 'react-terminal-component'
 import { links } from './links'
 const customFileSystem = Terminal.FileSystem.create({
   '/about': {},
-  '/about/skills': { content: 'This is a skills', canModify: false },
-  '/about/education': { content: 'This is education', canModify: false },
-  '/about/experience': { content: 'This is experience', canModify: false },
+  '/about/skills': {},
+  '/about/skills/tech': {},
+  '/about/skills/tech/data-science': {
+    content: 'pandas, scikit-learn, jupyter, searborn, bokeh, knime',
+    canModify: false
+  },
+  '/about/skills/tech/front-end': {
+    content: 'React, Redux, Semantic-UI',
+    canModify: false
+  },
+  '/about/skills/tech/back-end': {
+    content:
+      'NodeJS, ExpressJS, Passport, NextJS, Deno, PostgreSQL, MongoDB, Redis, Elastic Search, Flask, IPFS',
+    canModify: false
+  },
+  '/about/skills/tech/ethereum': {
+    content:
+      'EthersJS, Web3JS, ERC Standards, Truffle, Hardhat, Infura, Open Zeppelin, Metamask, The Graph',
+    canModify: false
+  },
+  '/about/skills/tech/devops': {
+    content:
+      'Docker, Kubernetes, TravisCI, Github Actions, AWS Elastic Beanstalk',
+    canModify: false
+  },
+  '/about/skills/tech/blockchain': {
+    content:
+      'Cryptocurrencies, DEFI, Bitcoin, Hyperledger, Substrate/Polkadot, zk-SNARKS',
+    canModify: false
+  },
+  '/about/skills/languages': {
+    content:
+      'Javascript, Typescript, Python, Solidity, SQL, HTML, CSS, (Golang, Rust) \nFrench, English, German, (Spanish)',
+    canModify: false
+  },
+  '/about/education': {
+    content:
+      'Bachelor of Science, Lycée Kerichen de Brest\nMaster of Engineering, Ecole Centrale de Nantes',
+    canModify: false
+  },
+  '/about/experiences': {
+    content: `
+    2020 till present: Data Analyst / Full Stack Web Developer - Airbus\n
+    2017 - 2020: Data Analyst / Project and Performance Manager - Airbus\n
+    2013 - 2016: Technical Data Engineer - Airbus\n
+    2012: Intern, Standardizatin Office - Renault\n
+    2011: Intern, Supply & Trading dpt - Total`,
+    canModify: false
+  },
   '/portfolio': {},
   '/portfolio/bitcoin-opreturn-indexer': {
     content: 'Index and store bitcoin OP_RETURN data. Serve via JSON API.',
@@ -64,11 +110,12 @@ const customCommandMapping = Terminal.CommandMapping.create({
       return {
         output: Terminal.OutputFactory.makeTextOutput(
           [
-            'ls: list content',
-            'cat: print content',
+            'ls:          list content',
+            'cat:         print content',
             'cd <folder>: change directory',
-            'cd ..: go back to parent directory',
-            'goto: open in new tab'
+            'cd ..:       go back to parent directory',
+            'clear:       clear terminal',
+            'goto:        open in new tab'
           ].join('\n')
         )
       }
