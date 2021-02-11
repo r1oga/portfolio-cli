@@ -17,11 +17,21 @@
 }
 
 .quote {
-  margin-top: 0.8em;
+  margin-top: 0.9em;
   font-family: monospace;
   color: #fff;
   font-size: 1em;
   width: 100%;
   text-align: center;
   display: inline-block;
+}
+
+@media (max-width: 500px) {
+  .roles span {
+    font-size: 0.8em;
+  }
+
+  .quote {
+    font-size: 0.7em;
+  }
 }

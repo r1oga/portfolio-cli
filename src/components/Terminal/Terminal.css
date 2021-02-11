@@ -1,0 +1,10 @@
+.terminal {
+  padding-left: 0.6em;
+}
+
+@media (max-width: 500px) {
+  .terminalOutput,
+  .terminalInput {
+    font-size: 1em;
+  }
+}
