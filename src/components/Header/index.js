@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'
 
 import Logo from '../Logo'
 import './Header.css'
@@ -11,9 +12,24 @@ const Header = () => (
     </span>
     <Logo />
     <div className="roles">
-      <span>Industrial Engineer</span>
+      <span>Blockchain Full Stack Developer</span>
       <span>Data Analyst</span>
-      <span>Ethereum Developer</span>
+      <span>Industrial Engineer</span>
+    </div>
+    <div className="social">
+      <a href="https://github.com/r1oga" target="_blank">
+        <FaGithub />
+      </a>
+
+      <a href="https://twitter.com/r1oga" target="_blank">
+        <FaTwitter />
+      </a>
+      <a href="https://www.linkedin.com/in/griou/" target="_blank">
+        <FaLinkedin />
+      </a>
+      <a href="https://listed.to/@r1oga" className="blog" target="_blank">
+        Blog
+      </a>
     </div>
   </>
 )

@@ -9,11 +9,19 @@
   background-color: #f23f52;
 }
 
-.roles {
+.roles,
+.social {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin-bottom: 1em;
+}
+
+.social > * {
+  margin-right: 0.5em;
+  color: #eb4c5c;
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
 .quote {
@@ -26,12 +34,25 @@
   display: inline-block;
 }
 
+.blog {
+  font-family: 'monospace';
+  font-size: 1em;
+  text-decoration: none;
+}
+
 @media (max-width: 500px) {
   .roles span {
-    font-size: 0.8em;
+    font-size: 0.65em;
   }
 
   .quote {
-    font-size: 0.7em;
+    font-size: 0.65em;
+  }
+
+  .social > * {
+    font-size: 0.8em;
+  }
+  .blog {
+    font-size: 0.8em;
   }
 }

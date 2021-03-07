@@ -1,65 +1,44 @@
 import * as Terminal from 'javascript-terminal'
-import { OutputFactory } from 'react-terminal-component'
 
 import { links } from './links'
 const customFileSystem = Terminal.FileSystem.create({
   '/about': {},
   '/about/skills': {},
-  '/about/skills/tech': {},
-  '/about/skills/tech/data-science': {
-    content: 'pandas, scikit-learn, jupyter, searborn, bokeh, knime',
-    canModify: false
-  },
-  '/about/skills/tech/front-end': {
-    content: 'React, Redux, Semantic-UI',
-    canModify: false
-  },
-  '/about/skills/tech/back-end': {
-    content:
-      'NodeJS, ExpressJS, Passport, NextJS, Deno, PostgreSQL, MongoDB, Redis, Elastic Search, Flask, IPFS',
-    canModify: false
-  },
-  '/about/skills/tech/ethereum': {
-    content:
-      'EthersJS, Web3JS, ERC Standards, Truffle, Hardhat, Infura, Open Zeppelin, Metamask, The Graph',
-    canModify: false
-  },
-  '/about/skills/tech/devops': {
-    content:
-      'Docker, Kubernetes, TravisCI, Github Actions, AWS Elastic Beanstalk',
-    canModify: false
-  },
-  '/about/skills/tech/blockchain': {
-    content:
-      'Cryptocurrencies, DEFI, Bitcoin, Hyperledger, Substrate/Polkadot, zk-SNARKS',
-    canModify: false
+  '/about/skills/tech': {
+    content: `Blockchain:   Cryptocurrencies, DEFI, Bitcoin, Hyperledger, Substrate/Polkadot, zk-SNARKS
+Ethereum:     EthersJS, Web3JS, ERC Standards, Truffle, Hardhat, Infura, Open Zeppelin, Metamask, The Graph
+Data Science: Pandas, Scikit-learn, Jupyter, Searborn, Bokeh, Knime
+Back End:     NodeJS, ExpressJS, Passport, NextJS, Deno, PostgreSQL, MongoDB, Redis, Elasticsearch, Flask, IPFS
+Front End:    React, Redux, Semantic-UI
+DevOps:       Docker, Kubernetes, TravisCI, Github Actions, AWS Elastic Beanstalk
+`
   },
   '/about/skills/languages': {
-    content:
-      'Javascript, Typescript, Python, Solidity, SQL, HTML, CSS, (Golang, Rust) \nFrench, English, German, (Spanish)',
+    content: `Javascript, Typescript, Python, Solidity, SQL, HTML, CSS, (Golang, Rust)
+French, English, German, (Spanish)
+
+(Beginner)`,
     canModify: false
   },
   '/about/education': {
-    content:
-      'Bachelor of Science, Lycée Kerichen de Brest\nMaster of Engineering, Ecole Centrale de Nantes',
+    content: `YEAR   DEGREE                  SCHOOL
+2012   Master of Engineering   Ecole Centrale de Nantes
+2009   Bachelor of Science     Lycée Kerichen de Brest
+`,
     canModify: false
   },
   '/about/experiences': {
-    content: `
-    2020 till present: Data Analyst / Full Stack Web Developer - Airbus\n
-    2017 - 2020: Data Analyst / Project and Performance Manager - Airbus\n
-    2013 - 2016: Technical Data Engineer - Airbus\n
-    2012: Intern, Standardizatin Office - Renault\n
-    2011: Intern, Supply & Trading dpt - Total`,
+    content: `YEAR                 ROLE                                             COMPANY
+2020 till present    Data Analyst / Full Stack Web Developer          Airbus
+2017-2020            Data Analyst / Project and Performance Manager   Airbus
+2013-2016            Technical Data Engineer                          Airbus
+2012                 Intern, Standardization Office                   Renault
+2011                 Intern, Supply & Trading dpt                     Total`,
     canModify: false
   },
   '/portfolio': {},
   '/portfolio/bitcoin-opreturn-indexer': {
     content: 'Index and store bitcoin OP_RETURN data. Serve via JSON API.',
-    canModify: false
-  },
-  '/portfolio/channels-raidar': {
-    content: 'Monitoring of Raiden Network payment Channels.',
     canModify: false
   },
   '/portfolio/channels-raidar': {
@@ -88,14 +67,11 @@ const customFileSystem = Terminal.FileSystem.create({
     content: 'Ethereum dApp to manage flight insurances.',
     canModify: false
   },
-  '/contact': {},
-  '/contact/email': { content: 'r1oga@tuta.io', canModify: false },
-  '/contact/github': { content: 'https://github.com/r1oga', canModify: false },
-  '/contact/twitter': {
-    content: 'https://twitter.com/r1oga',
+  '/contact': {
+    content: `email: r1oga@tuta.io
+twitter, discord, telegram: @r1oga`,
     canModify: false
-  },
-  '/blog': { content: 'https://listed.to/@r1oga', canModify: false }
+  }
 })
 
 const initialOutputs = ['?: see commands', '\n']
@@ -110,12 +86,12 @@ const customCommandMapping = Terminal.CommandMapping.create({
       return {
         output: Terminal.OutputFactory.makeTextOutput(
           [
-            'ls:          list content',
-            'cat:         print content',
+            'ls <folder>: list content',
+            'cat <file>:  print content',
             'cd <folder>: change directory',
             'cd ..:       go back to parent directory',
             'clear:       clear terminal',
-            'goto:        open in new tab'
+            'goto <link>: open in new tab a link from [github, twitter, linkedin, blog, portfolio-item]'
           ].join('\n')
         )
       }

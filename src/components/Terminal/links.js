@@ -1,6 +1,7 @@
 export const links = {
   github: 'https://github.com/r1oga',
   twitter: 'https://twitter.com/r1oga',
+  linkedin: 'https://www.linkedin.com/in/griou/',
   airchain: 'https://r1oga.github.io/airChain/',
   'bitcoin-opreturn-indexer':
     'https://github.com/r1oga/bitcoin-opreturn-indexer',
