@@ -91,7 +91,7 @@ const customCommandMapping = Terminal.CommandMapping.create({
             'cd <folder>: change directory',
             'cd ..:       go back to parent directory',
             'clear:       clear terminal',
-            'goto <link>: open in new tab a link from [github, twitter, linkedin, blog, portfolio-item]'
+            'goto <link>: open in new tab a link from [github, twitter, blog, portfolio-item]'
           ].join('\n')
         )
       }

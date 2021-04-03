@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaTwitter } from 'react-icons/fa'
 
 import Logo from '../Logo'
 import './Header.css'
@@ -23,9 +23,6 @@ const Header = () => (
 
       <a href="https://twitter.com/r1oga" target="_blank">
         <FaTwitter />
-      </a>
-      <a href="https://www.linkedin.com/in/griou/" target="_blank">
-        <FaLinkedin />
       </a>
       <a href="https://listed.to/@r1oga" className="blog" target="_blank">
         Blog
